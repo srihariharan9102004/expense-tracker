@@ -1,0 +1,26 @@
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filter-bar__btn {
+  padding: 8px 15px;
+  background: #85f57b;
+  border: 1px solid #cdd6d4;
+border-radius: 100px;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.filter-bar__btn--active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .filter-bar__btn {
+    padding: 10px 24px;
+  }
+}

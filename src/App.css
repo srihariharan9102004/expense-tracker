@@ -1,0 +1,48 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 42px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/*summary cards */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* form (left) + list (right) */
+.content {
+  display: grid;
+  grid-template-columns: minmax(300px, 4fr) 8fr;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px 16px;
+    gap: 24px;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

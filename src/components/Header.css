@@ -1,0 +1,56 @@
+.header {
+  background:#424141;
+  color: #fff;
+  padding: 0 72px;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header__logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+}
+
+.header__logo span {
+  color: var(--yellow);
+}
+
+.header__month {
+  background: rgba(250, 226, 6, 0.747);
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+    height: 100px;
+  }
+
+  .header__logo {
+    font-size: 1.6rem;
+  }
+
+  .header__month {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header__logo {
+    font-size: 1.25rem;
+  }
+
+  .header__month {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}

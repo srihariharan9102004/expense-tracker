@@ -1,0 +1,123 @@
+.transaction {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.transaction:last-child {
+  border-bottom: none;
+}
+
+.transaction__icon {
+  width: 66px;
+  height: 66px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 1.7rem;
+}
+
+.transaction__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction__title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.transaction__date {
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.transaction__amount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.transaction__amount--income {
+  color: var(--green);
+}
+
+.transaction__amount--expense {
+  color: var(--red);
+}
+
+.transaction__delete {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  opacity: 0.45;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.badge {
+  padding: 2px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* category colours (icon tile + badge) */
+/* .transaction__icon--salary,
+.badge--salary {
+  background: var(--green-soft);
+  color: var(--green);
+}
+.transaction__icon--food,
+.badge--food {
+  background: #fdeccb;
+  color: #b25e09;
+}
+.transaction__icon--travel,
+.badge--travel {
+  background: #dfe9fd;
+  color: #1d4ed8;
+}
+.transaction__icon--bills,
+.badge--bills {
+  background: #ebe4fb;
+  color: #6d28d9;
+}
+.transaction__icon--shopping,
+.badge--shopping {
+  background: var(--red-soft);
+  color: var(--red);
+} */
+
+@media (max-width: 768px) {
+  .transaction {
+    gap: 8px;
+    padding: 10px 0;
+  }
+
+  /* .transaction__icon {
+    width: 56px;
+    height: 56px;
+  } */
+
+  .transaction__title {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.05rem;
+  }
+
+  .badge {
+    display: none;
+  }
+
+  .transaction__amount {
+    font-size: 1.2rem;
+  }
+}

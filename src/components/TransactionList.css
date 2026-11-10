@@ -1,0 +1,35 @@
+.list-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.list-card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.list-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.list-card__count {
+  color: var(--muted);
+}
+
+.list-card__items {
+  list-style: none;
+}
+
+@media (max-width: 768px) {
+  .list-card {
+    padding: 10px 20px;
+  }
+}
