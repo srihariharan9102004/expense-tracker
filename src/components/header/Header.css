@@ -2,15 +2,15 @@
   background:#424141;
   color: #fff;
   padding: 0 72px;
-  height: 112px;
-  display: flex;
+height: 112px;
+display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
 
 .header__logo {
-  font-size: 2rem;
+font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.5px;
   white-space: nowrap;
@@ -22,8 +22,8 @@
 
 .header__month {
   background: rgba(250, 226, 6, 0.747);
-  padding: 14px 22px;
-  border-radius: 999px;
+  padding: 14px 20px;
+   border-radius: 800px;
   font-size: 1.1rem;
   white-space: nowrap;
 }
@@ -32,9 +32,7 @@
   .header {
     padding: 0 16px;
     height: 100px;
-  }
-
-  .header__logo {
+  } .header__logo {
     font-size: 1.6rem;
   }
 

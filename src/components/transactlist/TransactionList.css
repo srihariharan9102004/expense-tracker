@@ -2,10 +2,10 @@
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 34px;
-  display: flex;
+     padding: 34px;
+  display:flex;
   flex-direction: column;
-  gap: 24px;
+gap: 24px;
 }
 
 .list-card__head {
@@ -17,7 +17,7 @@
 
 .list-card__title {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 650;
 }
 
 .list-card__count {
@@ -32,4 +32,10 @@
   .list-card {
     padding: 10px 20px;
   }
+}
+
+.list-card__empty {
+  text-align: center;
+color: var(--muted);
+padding: 30px 0;
 }

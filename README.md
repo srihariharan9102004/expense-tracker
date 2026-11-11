@@ -1,6 +1,9 @@
-# Expense Tracker – Phase 1 (Static UI)
+# Expense Tracker
 
-React + Vite static UI. No state, no events, no API – hardcoded data passed through props.
+React + Vite expense tracker.
+
+- Phase 1: static UI
+- Phase 2: useState and events (add, delete, filter, live totals). Data comes from `src/data.js`, no API yet.
 
 ```bash
 npm install
@@ -10,12 +13,11 @@ npm run dev
 ## Component tree
 
 ```
-App
+App  (state: transactions, activeFilter)
 ├── Header
-├── SummaryCard ×3 (Income, Expense, Balance)
-├── TransactionForm
-├── TransactionList
-│   ├── FilterBar
-│   └── TransactionItem ×6
-└── Footer
+├── SummaryCard x3  (Total income, Total expense, Balance)
+├── TransactionForm  (state: the form fields)
+└── TransactionList
+    ├── FilterBar
+    └── TransactionItem x n
 ```

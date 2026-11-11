@@ -1,23 +1,13 @@
 .transaction {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   padding: 18px 6px;
   border-bottom: 1px solid var(--border);
 }
 
 .transaction:last-child {
   border-bottom: none;
-}
-
-.transaction__icon {
-  width: 66px;
-  height: 66px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  font-size: 1.7rem;
 }
 
 .transaction__info {
@@ -29,9 +19,9 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 4px 12px;
+  gap: 3px 10px;
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .transaction__date {
@@ -55,57 +45,51 @@
 
 .transaction__delete {
   background: none;
-  border: none;
+border: none;
   font-size: 1.1rem;
-  opacity: 0.45;
-  cursor: pointer;
-  padding: 6px;
+  font-weight: 600;
+  color: var(--muted);
+cursor: pointer;
+padding: 6px 10px;
+}
+
+.transaction__delete:hover {
+  color: var(--red);
 }
 
 .badge {
   padding: 2px 14px;
-  border-radius: 999px;
+  border-radius: 800px;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
-/* category colours (icon tile + badge) */
-/* .transaction__icon--salary,
+/* badge colours */
 .badge--salary {
   background: var(--green-soft);
   color: var(--green);
 }
-.transaction__icon--food,
 .badge--food {
   background: #fdeccb;
   color: #b25e09;
 }
-.transaction__icon--travel,
 .badge--travel {
   background: #dfe9fd;
   color: #1d4ed8;
 }
-.transaction__icon--bills,
 .badge--bills {
   background: #ebe4fb;
   color: #6d28d9;
 }
-.transaction__icon--shopping,
 .badge--shopping {
   background: var(--red-soft);
   color: var(--red);
-} */
+}
 
 @media (max-width: 768px) {
   .transaction {
-    gap: 8px;
-    padding: 10px 0;
-  }
-
-  /* .transaction__icon {
-    width: 56px;
-    height: 56px;
-  } */
+    gap: 5px;
+    padding: 8px 0; }
 
   .transaction__title {
     flex-direction: column;
@@ -114,10 +98,8 @@
   }
 
   .badge {
-    display: none;
-  }
+    display: none; }
 
   .transaction__amount {
     font-size: 1.2rem;
-  }
-}
+  }}
