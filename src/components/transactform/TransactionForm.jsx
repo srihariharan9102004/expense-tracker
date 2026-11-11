@@ -13,7 +13,6 @@ function TransactionForm({ categories, onAdd }) {
   function handleSubmit(e) {
     e.preventDefault()
 
-    // don't add if the title is empty or the amount is 0 or less
     if (title.trim() === '' || Number(amount) <= 0 || date === '') {
       setError('Please enter a title, an amount above 0 and a date.')
       return
@@ -21,7 +20,7 @@ function TransactionForm({ categories, onAdd }) {
 
     onAdd({ title: title.trim(), amount: Number(amount), type, category, date })
 
-    // clear the form
+    //  form clear
     setTitle('')
     setAmount('')
     setType('expense')
@@ -36,76 +35,45 @@ function TransactionForm({ categories, onAdd }) {
 
       <div className="field">
         <label htmlFor="title">Title</label>
-        <input
-          id="title"
-          type="text"
-          placeholder="e.g. Lunch"
+        <input   id="title" type="text" placeholder="e.g. Lunch"
           value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+          onChange={(e) => setTitle(e.target.value)}/>
       </div>
 
       <div className="field">
         <label htmlFor="amount">Amount (₹)</label>
-        <input
-          id="amount"
-          type="number"
-          placeholder="0"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
+        <input id="amount" type="number" placeholder="0" value={amount} onChange={(e) => setAmount(e.target.value)} />
       </div>
 
       <div className="field">
         <span className="field__label">Type</span>
         <div className="type-toggle">
-          <button
-            type="button"
+          <button type="button"
             className={type === 'income' ? 'type-toggle__btn type-toggle__btn--income' : 'type-toggle__btn'}
-            onClick={() => setType('income')}
-          >
-            Income
-          </button>
-          <button
-            type="button"
+            onClick={() => setType('income')}> Income</button>
+          <button type="button"
             className={type === 'expense' ? 'type-toggle__btn type-toggle__btn--expense' : 'type-toggle__btn'}
-            onClick={() => setType('expense')}
-          >
-            Expense
-          </button>
-        </div>
-      </div>
+            onClick={() => setType('expense')} > Expense</button>
+        </div></div>
 
       <div className="form-card__row">
         <div className="field">
           <label htmlFor="category">Category</label>
           <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
             {categories.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
+              <option key={c} value={c}> {c}</option> ))}
           </select>
         </div>
 
         <div className="field">
           <label htmlFor="date">Date</label>
-          <input
-            id="date"
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
+          <input id="date" type="date" value={date} onChange={(e) => setDate(e.target.value)} />
         </div>
       </div>
 
       {error && <p className="form-card__error">{error}</p>}
 
-      <button type="submit" className="form-card__submit">
-        Add Transaction
-      </button>
+      <button type="submit" className="form-card__submit">Add Transaction</button>
     </form>
-  )
-}
-
+  )}
 export default TransactionForm
