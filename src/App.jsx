@@ -3,6 +3,7 @@ import Header from './components/header/Header'
 import SummaryCard from './components/summary/SummaryCard'
 import TransactionForm from './components/transactform/TransactionForm'
 import TransactionList from './components/transactlist/TransactionList'
+import AgentChat from './components/agent/AgentChat'
 import { initialTransactions, categories, filters } from './data'
 import './App.css'
 
@@ -50,6 +51,15 @@ function App() {
             filters={filters} activeFilter={activeFilter}
             onFilterChange={setActiveFilter} onDelete={handleDelete} />
         </section>   </main>
+
+      {/* the AI assistant (bottom right) */}
+      <AgentChat
+        transactions={transactions}
+        filters={filters}
+        onAdd={handleAdd}
+        onDelete={handleDelete}
+        onFilterChange={setActiveFilter}
+      />
     </div>
   )}
 export default App

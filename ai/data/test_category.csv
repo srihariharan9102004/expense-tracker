@@ -1,0 +1,50 @@
+text,label
+dinner,Food
+pizza for the family,Food
+biriyani,Food
+samosa,Food
+coffee shop,Food
+chicken rice,Food
+grocery shopping,Food
+juice,Food
+hotel meals,Food
+pani puri,Food
+lunch box,Food
+bus ticket,Travel
+petrol,Travel
+uber ride,Travel
+metro,Travel
+train fare,Travel
+auto,Travel
+flight booking,Travel
+cab,Travel
+parking fee,Travel
+bike petrol,Travel
+electricity,Bills
+wifi,Bills
+mobile recharge,Bills
+house rent,Bills
+gas cylinder,Bills
+water bill,Bills
+emi,Bills
+insurance premium,Bills
+school fees,Bills
+netflix subscription,Bills
+shoes,Shopping
+new shirt,Shopping
+headphones,Shopping
+amazon,Shopping
+gift,Shopping
+laptop bag,Shopping
+jeans,Shopping
+watch,Shopping
+clothes,Shopping
+mobile cover,Shopping
+salary,Salary
+bonus,Salary
+freelance,Salary
+pocket money,Salary
+cashback,Salary
+stipend,Salary
+refund,Salary
+interest,Salary

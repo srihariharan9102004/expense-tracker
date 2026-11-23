@@ -76,4 +76,4 @@ function TransactionForm({ categories, onAdd }) {
       <button type="submit" className="form-card__submit">Add Transaction</button>
     </form>
   )}
-export default TransactionForm
+export default TransactionForm;
