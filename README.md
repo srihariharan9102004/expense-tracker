@@ -27,3 +27,10 @@ pip install numpy
 python train.py
 ```
 Read `ai/AI_GUIDE.md` to learn how it works.
+
+## Try in the chat box
+spent 500 on pizza | got 20000 salary | delete lunch | highest spend | lowest spend |
+how much money is used? | what is my balance | show food | show all
+
+## TypeScript practice
+Small practice files are in `typescript-practice/` (see the README inside that folder).
