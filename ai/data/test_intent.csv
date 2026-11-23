@@ -1,0 +1,102 @@
+text,label
+i spent 450 on dinner,add_expense
+add 300 for auto,add_expense
+paid 1500 for wifi bill,add_expense
+bought a new shirt for 800,add_expense
+spent 2k on shopping,add_expense
+lunch 120,add_expense
+yesterday i spent 600 on petrol,add_expense
+pizza cost me 350,add_expense
+note 90 for tea,add_expense
+i just paid 5000 rent,add_expense
+add expense 45 coffee,add_expense
+gave 700 for movie,add_expense
+"spent 1,200 on groceries",add_expense
+pani puri 60,add_expense
+Spent Rs 250 on snacks,add_expense
+buy headphones 1999,add_expense
+i got 25000 as salary,add_income
+received 3000 from freelance,add_income
+add income 500,add_income
+my stipend 8000 credited,add_income
+earned 1200 today,add_income
+got 200 cashback,add_income
+bonus of 5000 received,add_income
+income 15000,add_income
+money received 700 from friend,add_income
+add 4000 to my income,add_income
+delete lunch,delete
+remove petrol,delete
+please delete the shoes expense,delete
+delete last transaction,delete
+remove the electricity bill,delete
+erase mobile recharge entry,delete
+cancel the last one,delete
+delete 850 lunch,delete
+i want to remove the pizza,delete
+undo last entry,delete
+what is my highest spend,highest
+which is the biggest expense,highest
+where did i spend the most money,highest
+show top spending,highest
+largest expense this month,highest
+most costly purchase,highest
+highest spending category,highest
+max spend,highest
+what did i spend the most on,highest
+lowest expense,lowest
+what is my smallest spending,lowest
+least amount i spent,lowest
+show cheapest expense,lowest
+minimum spend,lowest
+which category i spent least,lowest
+low spend,lowest
+what did i spend the least on,lowest
+how much of my money is used,budget_usage
+90% of my money is used,budget_usage
+have i used 90 percent,budget_usage
+am i overspending,budget_usage
+budget status,budget_usage
+how much percent of income spent,budget_usage
+am i running out of money,budget_usage
+check my spending limit,budget_usage
+money used percentage,budget_usage
+is 90% money finished,budget_usage
+what is my balance,summary
+how much money is left,summary
+show total expense,summary
+how much did i spend this month,summary
+total income,summary
+remaining money,summary
+give me a summary,summary
+monthly spending,summary
+how much money do i still have,summary
+show food expenses,filter
+filter bills,filter
+only travel,filter
+show all transactions,filter
+display shopping,filter
+clear filter,filter
+show me everything,filter
+list travel expenses,filter
+hi,greeting
+hello there,greeting
+good morning,greeting
+thank you,greeting
+thanks a lot,greeting
+bye,greeting
+hey,greeting
+help me,help
+what can you do,help
+how do i use you,help
+show commands,help
+what can i ask,help
+what is the weather,other
+tell me a joke,other
+who won the match,other
+play music,other
+what is the capital of india,other
+open youtube,other
+asdfgh,other
+translate this to hindi,other
+how far is the moon,other

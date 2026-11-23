@@ -22,12 +22,19 @@
   gap: 20px;
 }
 
-/* form (left) + list (right) */
-.content {
-  display: grid;
-  grid-template-columns: minmax(300px, 4fr) 8fr;
-  gap: 30px;
-  align-items: start;
+/* shown while loading and when the server is not reachable */
+.page-message {
+  text-align: center;
+  color: var(--muted);
+  padding: 40px 0;
+}
+
+.app__error {
+  background: var(--red-soft);
+  color: var(--red);
+  border: 1px solid var(--red);
+  border-radius: 10px;
+  padding: 12px 16px;
 }
 
 @media (max-width: 768px) {
@@ -41,8 +48,4 @@
     gap: 18px;
   }
 
-  .content {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
 }

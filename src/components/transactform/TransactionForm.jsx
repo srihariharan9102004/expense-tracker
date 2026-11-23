@@ -10,7 +10,7 @@ function TransactionForm({ categories, onAdd }) {
   const [date, setDate] = useState(getToday())
   const [error, setError] = useState('')
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
 
     if (title.trim() === '' || Number(amount) <= 0 || date === '') {
@@ -18,9 +18,10 @@ function TransactionForm({ categories, onAdd }) {
       return
     }
 
-    onAdd({ title: title.trim(), amount: Number(amount), type, category, date })
-
-    //  form clear
+    const saved = await onAdd({ title: title.trim(), amount: Number(amount), type, category, date })
+    if (!saved) {
+      return 
+    }
     setTitle('')
     setAmount('')
     setType('expense')
@@ -28,7 +29,6 @@ function TransactionForm({ categories, onAdd }) {
     setDate(getToday())
     setError('')
   }
-
   return (
     <form className="form-card" onSubmit={handleSubmit}>
       <h2 className="form-card__title">Add transaction</h2>
@@ -53,8 +53,7 @@ function TransactionForm({ categories, onAdd }) {
             onClick={() => setType('income')}> Income</button>
           <button type="button"
             className={type === 'expense' ? 'type-toggle__btn type-toggle__btn--expense' : 'type-toggle__btn'}
-            onClick={() => setType('expense')} > Expense</button>
-        </div></div>
+            onClick={() => setType('expense')} > Expense</button> </div></div>
 
       <div className="form-card__row">
         <div className="field">
@@ -62,18 +61,16 @@ function TransactionForm({ categories, onAdd }) {
           <select id="category" value={category} onChange={(e) => setCategory(e.target.value)}>
             {categories.map((c) => (
               <option key={c} value={c}> {c}</option> ))}
-          </select>
-        </div>
+          </select></div>
 
         <div className="field">
           <label htmlFor="date">Date</label>
           <input id="date" type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-        </div>
-      </div>
+        </div></div>
 
       {error && <p className="form-card__error">{error}</p>}
 
       <button type="submit" className="form-card__submit">Add Transaction</button>
     </form>
   )}
-export default TransactionForm
+export default TransactionForm;

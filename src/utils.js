@@ -17,3 +17,8 @@ export function formatDate(isoDate) {
 export function getToday() {
   return new Date().toLocaleDateString('en-CA')
 }
+
+// current month for the header, e.g. "November 2026"
+export function getMonthLabel() {
+  return new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' })
+}

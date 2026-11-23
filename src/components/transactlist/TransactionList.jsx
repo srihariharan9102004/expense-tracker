@@ -13,8 +13,7 @@ function TransactionList({ transactions, filters, activeFilter, onFilterChange, 
       <FilterBar filters={filters} activeFilter={activeFilter} onFilterChange={onFilterChange} />
 
       {transactions.length === 0 ? (
-        <p className="list-card__empty">No transactions yet</p>
-      ) : (
+        <p className="list-card__empty">No transactions yet</p>) : (
         <ul className="list-card__items">
           {transactions.map((t) => (
             <TransactionItem
@@ -25,8 +24,7 @@ function TransactionList({ transactions, filters, activeFilter, onFilterChange, 
               date={t.date}
               amount={t.amount}
               type={t.type}
-              onDelete={onDelete}/>))}</ul>)}
-    </section>
+              onDelete={onDelete}/>))}</ul>)} </section>
   )
 }
 

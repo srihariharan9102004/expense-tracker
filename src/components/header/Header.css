@@ -10,7 +10,9 @@ display: flex;
 }
 
 .header__logo {
-font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.5px;
   white-space: nowrap;
@@ -18,6 +20,29 @@ font-size: 2rem;
 
 .header__logo span {
   color: var(--yellow);
+}
+
+.header__nav {
+  display: flex;
+  gap: 8px;
+}
+
+.header__link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  opacity: 0.8;
+}
+
+.header__link:hover {
+  opacity: 1;
+}
+
+.header__link--active {
+  background: rgba(255, 255, 255, 0.18);
+  opacity: 1;
+  font-weight: 600;
 }
 
 .header__month {
@@ -30,9 +55,18 @@ font-size: 2rem;
 
 @media (max-width: 768px) {
   .header {
-    padding: 0 16px;
-    height: 100px;
-  } .header__logo {
+    padding: 14px 16px;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  /* menu goes on its own row under the logo */
+  .header__nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .header__logo {
     font-size: 1.6rem;
   }
 

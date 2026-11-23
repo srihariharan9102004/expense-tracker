@@ -1,0 +1,24 @@
+.not-found {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.not-found__code {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.not-found__text {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.not-found__link {
+  background: var(--teal);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+}
