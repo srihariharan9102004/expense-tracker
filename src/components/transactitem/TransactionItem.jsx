@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useTransactions } from '../../context/TransactionsContext'
 import { formatRupees, formatDate } from '../../utils'
 import './TransactionItem.css'
-function TransactionItem({ id, title, category, date, amount, type, onDelete }) {
+
+function TransactionItem({ id, title, category, date, amount, type }) {
+  const { deleteTransaction } = useTransactions()
   const isIncome = type === 'income'
 
   return (
@@ -9,15 +12,25 @@ function TransactionItem({ id, title, category, date, amount, type, onDelete }) 
       <div className="transaction__info">
         <p className="transaction__title">
           <Link to={`/transactions/${id}`} className="transaction__link">{title}</Link>
-          <span className={`badge badge--${category.toLowerCase()}`}>{category}</span> </p>
-        <p className="transaction__date">{formatDate(date)}</p> </div>
+          <span className={`badge badge--${category.toLowerCase()}`}>{category}</span>
+        </p>
+        <p className="transaction__date">{formatDate(date)}</p>
+      </div>
 
       <p className={isIncome ? 'transaction__amount transaction__amount--income' : 'transaction__amount transaction__amount--expense'}>
-        {isIncome ? '+' : '–'} {formatRupees(amount)}</p>
+        {isIncome ? '+' : '–'} {formatRupees(amount)}
+      </p>
 
-      <button  type="button"
+      <button
+        type="button"
         className="transaction__delete"
-        aria-label={`Delete ${title}`} onClick={() => onDelete(id)}>X </button>
+        aria-label={`Delete ${title}`}
+        onClick={() => deleteTransaction(id)}
+      >
+        X
+      </button>
     </li>
-  )}
+  )
+}
+
 export default TransactionItem

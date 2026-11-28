@@ -1,32 +1,24 @@
 import { Link } from 'react-router-dom'
-import SummaryCard from '../components/summary/SummaryCard'
+import SummaryCards from '../components/summary/SummaryCards'
 import TransactionItem from '../components/transactitem/TransactionItem'
+import { useTransactions } from '../context/TransactionsContext'
 import './Home.css'
+
+// how many latest transactions to show on the home page
 const RECENT_COUNT = 3
 
-function Home({ transactions, loading, onDelete }) {
+function Home() {
+  const { transactions, loading } = useTransactions()
+
   if (loading) {
     return <p className="page-message">Loading...</p>
   }
 
-  const totalIncome = transactions
-    .filter((t) => t.type === 'income')
-    .reduce((total, t) => total + t.amount, 0)
-
-  const totalExpense = transactions
-    .filter((t) => t.type === 'expense')
-    .reduce((total, t) => total + t.amount, 0)
-
-  const balance = totalIncome - totalExpense
   const recent = transactions.slice(0, RECENT_COUNT)
 
   return (
     <>
-      <section className="summary">
-        <SummaryCard label="Total income" amount={totalIncome} variant="income" />
-        <SummaryCard label="Total expense" amount={totalExpense} variant="expense" />
-        <SummaryCard label="Balance"   amount={balance} variant={balance < 0 ? 'negative' : 'balance'} />
-      </section>
+      <SummaryCards />
 
       <section className="recent">
         <div className="recent__head">
@@ -44,11 +36,16 @@ function Home({ transactions, loading, onDelete }) {
                 id={t.id}
                 title={t.title}
                 category={t.category}
-                date={t.date}  amount={t.amount}
-                type={t.type} onDelete={onDelete} /> ))}
+                date={t.date}
+                amount={t.amount}
+                type={t.type}
+              />
+            ))}
           </ul>
         )}
-        <Link to="/add" className="recent__add">Add transaction</Link></section>
+
+        <Link to="/add" className="recent__add">Add transaction</Link>
+      </section>
     </>
   )
 }

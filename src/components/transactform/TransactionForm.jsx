@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { categories } from '../../data'
 import { getToday } from '../../utils'
 import './TransactionForm.css'
 
-function TransactionForm({ categories, onAdd }) {
+function TransactionForm({ onAdd }) {
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState('')
   const [type, setType] = useState('expense')
@@ -20,7 +21,7 @@ function TransactionForm({ categories, onAdd }) {
 
     const saved = await onAdd({ title: title.trim(), amount: Number(amount), type, category, date })
     if (!saved) {
-      return 
+      return // the server failed, keep what the user typed
     }
     setTitle('')
     setAmount('')
@@ -73,4 +74,4 @@ function TransactionForm({ categories, onAdd }) {
       <button type="submit" className="form-card__submit">Add Transaction</button>
     </form>
   )}
-export default TransactionForm;
+export default TransactionForm

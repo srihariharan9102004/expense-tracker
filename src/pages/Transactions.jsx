@@ -1,17 +1,18 @@
 import TransactionList from '../components/transactlist/TransactionList'
+import { useTransactions } from '../context/TransactionsContext'
 
-function Transactions({ transactions, loading, filters, activeFilter, onFilterChange, onDelete }) {
+function Transactions() {
+  const { transactions, loading, filter } = useTransactions()
+
   if (loading) {
     return <p className="page-message">Loading...</p>
   }
+
+  // the filtered list is worked out while rendering, it is not stored
   const visibleTransactions =
-    activeFilter === 'All'
-      ? transactions
-      : transactions.filter((t) => t.category === activeFilter)
-  return (
-    <TransactionList
-      transactions={visibleTransactions}  filters={filters}
-      activeFilter={activeFilter} onFilterChange={onFilterChange} onDelete={onDelete} />
-  )}
+    filter === 'All' ? transactions : transactions.filter((t) => t.category === filter)
+
+  return <TransactionList transactions={visibleTransactions} />
+}
 
 export default Transactions

@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { runAgent } from '../../agent/agent'
+import { useTransactions } from '../../context/TransactionsContext'
+import { filters } from '../../data'
 import './AgentChat.css'
 
 const EXAMPLES = ['Spent 300 on pizza', 'Highest spend', 'How much money used?', 'Delete lunch']
@@ -9,7 +11,8 @@ const WELCOME = {
   from: 'bot',
   text: 'Hi, I am your expense assistant. Tell me what you spent, or ask about your money.',
 }
-function AgentChat({ transactions, filters, onAdd, onDelete, onFilterChange }) {
+function AgentChat() {
+  const { transactions, addTransaction, deleteTransaction, setFilter } = useTransactions()
   const navigate = useNavigate()
   const [open, setOpen] = useState(false)
   const [input, setInput] = useState('')
@@ -25,11 +28,11 @@ function AgentChat({ transactions, filters, onAdd, onDelete, onFilterChange }) {
     if (clean === '') return
     const result = runAgent(clean, { transactions, filters })
     const action = result.action
-    if (action && action.type === 'add') onAdd(action.data)
-    if (action && action.type === 'delete') onDelete(action.id)
+    if (action && action.type === 'add') addTransaction(action.data)
+    if (action && action.type === 'delete') deleteTransaction(action.id)
     if (action && action.type === 'filter') {
-      onFilterChange(action.value)
-      navigate('/transactions') 
+      setFilter(action.value)
+      navigate('/transactions') // the filter is shown on the list page
     }
 
     setMessages([

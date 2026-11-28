@@ -1,0 +1,63 @@
+.report {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+}
+
+.report__title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.report__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.report__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.report__amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.report__bar {
+  height: 12px;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.report__fill {
+  height: 100%;
+  background: var(--teal);
+  border-radius: 999px;
+}
+
+.report__percent {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.report__empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 30px 0;
+}
+
+@media (max-width: 768px) {
+  .report {
+    padding: 24px 20px;
+  }
+}

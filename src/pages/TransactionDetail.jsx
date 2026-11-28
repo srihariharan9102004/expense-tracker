@@ -1,28 +1,22 @@
-import { useState, useEffect } from 'react'
 import { Link, useParams, useNavigate } from 'react-router-dom'
-import { getTransaction } from '../api'
+import { useTransactions } from '../context/TransactionsContext'
+import useTransactionById from '../hooks/useTransactionById'
 import { formatRupees, formatDate } from '../utils'
 import './TransactionDetail.css'
 
-function TransactionDetail({ onDelete }) {
+function TransactionDetail() {
   const { id } = useParams() // the :id from the URL
   const navigate = useNavigate()
-
-  const [transaction, setTransaction] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState('')
-  useEffect(() => {
-    getTransaction(id)
-      .then((data) => setTransaction(data)) // data is null if the id does not exist
-      .catch(() => setError('Could not load this transaction. Is the server running? (npm run server)'))
-      .finally(() => setLoading(false))
-  }, [id])
+  const { deleteTransaction } = useTransactions()
+  const { transaction, loading, error } = useTransactionById(id)
 
   async function handleDelete() {
-    const deleted = await onDelete(transaction.id)
+    const deleted = await deleteTransaction(transaction.id)
     if (deleted) {
       navigate('/transactions')
-    }}
+    }
+  }
+
   if (loading) {
     return <p className="page-message">Loading...</p>
   }
